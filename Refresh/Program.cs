@@ -1,22 +1,33 @@
-﻿// var does not mean any type, it means figure it out for me
-// IEnumerable version
+﻿int numOfAvailableMovies = 5;
 
-var listOfNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-var listOfBigNumbers = listOfNumbers.Where(n => n > 4);
-
-foreach (int number in listOfBigNumbers)
-    Console.WriteLine(number);
-
+Console.WriteLine("-- addition --");
+numOfAvailableMovies = numOfAvailableMovies + 1;
+numOfAvailableMovies += 1;
+numOfAvailableMovies++;
+Console.WriteLine(numOfAvailableMovies);
 Console.ReadKey();
 
-// Another way to do it with listOfNumbers being a list
+Console.WriteLine("-- subtraction --");
+numOfAvailableMovies = numOfAvailableMovies - 1;
+numOfAvailableMovies -= 1;
+numOfAvailableMovies--;
+Console.WriteLine(numOfAvailableMovies);
+Console.ReadKey();
 
-var listOfNumbers2 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+Console.WriteLine("-- multiplication --");
+numOfAvailableMovies = numOfAvailableMovies * 2;
+numOfAvailableMovies *= 2;
+Console.WriteLine(numOfAvailableMovies);
+Console.ReadKey();
 
-List<int> listOfBigNumbers2 = listOfNumbers2.Where(n => n > 4).ToList();
+Console.WriteLine("-- division --");
+numOfAvailableMovies = numOfAvailableMovies / 2;
+numOfAvailableMovies /= 2;
+Console.WriteLine(numOfAvailableMovies);
+Console.ReadKey();
 
-foreach (int item in listOfBigNumbers2)
-    Console.WriteLine(item);
-
+Console.WriteLine("-- modulus --");
+int remainder;
+remainder = numOfAvailableMovies % 2;
+Console.WriteLine(remainder);
 Console.ReadKey();
