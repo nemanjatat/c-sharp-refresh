@@ -1,10 +1,22 @@
-﻿Console.WriteLine("What's your name?");
-String name = Console.ReadLine();
+﻿// var does not mean any type, it means figure it out for me
+// IEnumerable version
 
-Console.WriteLine("What's your age?");
-int age = Convert.ToInt32(Console.ReadLine());
+var listOfNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-Console.WriteLine("Your name is: " + name);
-Console.WriteLine("You are " + age + " years old");
+var listOfBigNumbers = listOfNumbers.Where(n => n > 4);
+
+foreach (int number in listOfBigNumbers)
+    Console.WriteLine(number);
+
+Console.ReadKey();
+
+// Another way to do it with listOfNumbers being a list
+
+var listOfNumbers2 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+List<int> listOfBigNumbers2 = listOfNumbers2.Where(n => n > 4).ToList();
+
+foreach (int item in listOfBigNumbers2)
+    Console.WriteLine(item);
 
 Console.ReadKey();
