@@ -1,22 +1,17 @@
-﻿Random random = new Random();
+﻿List<String> choices = new List<string> { "rock", "paper", "scissors" };
+Random random = new Random();
 
-int dice = random.Next(1, 7);
-Console.WriteLine(dice);
-Console.ReadKey();
+try
+{
+    Console.Write("Rock, paper or scissors: ");
+    String playerChoice = Console.ReadLine().ToLower();
 
-double randomDouble = random.NextDouble();
-Console.WriteLine(randomDouble);
-Console.ReadKey();
+    String opponentChoice = choices[random.Next(0, 3)];
 
-int dndice = random.Next(1, 20);
-Console.WriteLine(dndice);
-Console.ReadKey();
-
-int dice1 = random.Next(1, 7);
-int dice2 = random.Next(1, 7);
-int dice3 = random.Next(1, 7);
-Console.WriteLine(dice1);
-Console.WriteLine(dice2);
-Console.WriteLine(dice3);
-Console.WriteLine("------\nTotal: " + (dice1 + dice2 + dice3));
-Console.ReadKey();
+    if (playerChoice == "rock" && opponentChoice == "scissors")
+        Console.WriteLine("Player wins!");
+}
+catch(Exception e)
+{
+    Console.WriteLine(e.Message);
+}
