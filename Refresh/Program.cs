@@ -1,11 +1,20 @@
-﻿// hypotenuse of a right triangle
-// c = sqrt(a^2 + b^2)
+﻿String fullName = "Nem Tat";
+String phoneNumber = "123-456-7890";
 
-Console.Write("Enter side A: ");
-double a = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine(fullName.ToUpper());
+Console.WriteLine(fullName.ToLower());
 
-Console.Write("Enter side B: ");
-double b = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine(phoneNumber.Replace("-", "/"));
 
-double c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
-Console.WriteLine($"The hypotenuse is: {c}");
+String username = fullName.Replace(" ", "").ToLower();
+username = username.Insert(0, "@");
+Console.WriteLine(username);
+
+Console.WriteLine(fullName.Length);
+
+String firstName = fullName.Substring(0, 3);
+String lastName = fullName.Substring(4, 3);
+
+Console.WriteLine($"First Name: {firstName}\nLast Name: {lastName}");
+
+Console.ReadKey();
