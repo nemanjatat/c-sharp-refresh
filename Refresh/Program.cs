@@ -1,17 +1,11 @@
-﻿List<String> choices = new List<string> { "rock", "paper", "scissors" };
-Random random = new Random();
+﻿// hypotenuse of a right triangle
+// c = sqrt(a^2 + b^2)
 
-try
-{
-    Console.Write("Rock, paper or scissors: ");
-    String playerChoice = Console.ReadLine().ToLower();
+Console.Write("Enter side A: ");
+double a = Convert.ToDouble(Console.ReadLine());
 
-    String opponentChoice = choices[random.Next(0, 3)];
+Console.Write("Enter side B: ");
+double b = Convert.ToDouble(Console.ReadLine());
 
-    if (playerChoice == "rock" && opponentChoice == "scissors")
-        Console.WriteLine("Player wins!");
-}
-catch(Exception e)
-{
-    Console.WriteLine(e.Message);
-}
+double c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+Console.WriteLine($"The hypotenuse is: {c}");
