@@ -1,20 +1,34 @@
-﻿String fullName = "Nem Tat";
-String phoneNumber = "123-456-7890";
+﻿List<String> choices = new List<string> { "rock", "paper", "scissors" };
+Random random = new Random();
 
-Console.WriteLine(fullName.ToUpper());
-Console.WriteLine(fullName.ToLower());
+try
+{
+    Console.Write("Rock, paper or scissors: ");
+    String playerChoice = Console.ReadLine().ToLower();
 
-Console.WriteLine(phoneNumber.Replace("-", "/"));
+    String opponentChoice = choices[random.Next(0, 3)];
 
-String username = fullName.Replace(" ", "").ToLower();
-username = username.Insert(0, "@");
-Console.WriteLine(username);
+    Console.WriteLine($"Player chose: {playerChoice}\nOpponent chose: {opponentChoice}");
 
-Console.WriteLine(fullName.Length);
-
-String firstName = fullName.Substring(0, 3);
-String lastName = fullName.Substring(4, 3);
-
-Console.WriteLine($"First Name: {firstName}\nLast Name: {lastName}");
-
-Console.ReadKey();
+    if (playerChoice == "rock")
+    {
+        switch (opponentChoice)
+        {
+            case "scissors":
+                Console.WriteLine("Player Wins!");
+                break;
+            case "paper":
+                Console.WriteLine("Player Loses!");
+                break;
+            case "rock":
+                Console.WriteLine("It's a tie!");
+                break;
+            default:
+                break;
+        }
+    }
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
