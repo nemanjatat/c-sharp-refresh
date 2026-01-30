@@ -1,49 +1,14 @@
-﻿// switch = an efficient way to avoid writting too many if statements
+﻿// logical operators = can be used to check if more than 1 condition is true/false
 
-Console.WriteLine("Would you like to manually set current day, " +
-    "or let the system do it automatically? (M/A)");
-String userChoice = Console.ReadLine().ToUpper();
+// && (AND)
+// || (OR)
 
-if (userChoice == "M")
-{
-    Console.Write("What day of the week is it: ");
-    String userDayOfTheWeek = Console.ReadLine().ToUpper();
+Console.Write("What's the temperature outside (C): ");
+double temp = Convert.ToDouble(Console.ReadLine());
 
-    switch (userDayOfTheWeek)
-    {
-        case "MONDAY":
-            Console.WriteLine("Today is MONDAY!");
-            break;
-        case "TUESDAY":
-            Console.WriteLine("Today is TUESDAY");
-            break;
-        case "WEDNESDAY":
-            Console.WriteLine("Today is WEDNESDAY");
-            break;
-        case "THURSDAY":
-            Console.WriteLine("Today is THURSDAY");
-            break;
-        case "FRIDAY":
-            Console.WriteLine("Today is FRIDAY");
-            break;
-        case "SATURDAY":
-            Console.WriteLine("Today is SATURDAY");
-            break;
-        case "SUNDAY":
-            Console.WriteLine("Today is SUNDAY");
-            break;
-        default:
-            Console.WriteLine("I am confused");
-            break;
-    }
-}
-else if (userChoice == "A")
-{
-    Console.WriteLine($"Today is {DateTime.Now.DayOfWeek.ToString().ToUpper()}");
-}
-else
-{
-    Console.WriteLine("Huh?");
-}
+if (temp >= 10 && temp <= 25)
+    Console.WriteLine("It's warm outside!");
+else if (temp <= -50 || temp >= 50)
+    Console.WriteLine("It's recommended to not go outside!");
 
 Console.ReadKey();
