@@ -1,21 +1,23 @@
-﻿// for loop = repeats some code a FINITE amount of times
+﻿// nested loops = loops inside of other loops 
+//                uses vary - used a lot in sorting algorithms
 
-String message = "Countdown to new year...";
+int rows, columns;
+String symbol;
 
-for (int i = 0; i < message.Length; i++)
+Console.Write("How many rows: ");
+rows = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("How many columns: ");
+columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("What symbol: ");
+symbol = Console.ReadLine();
+
+for (int i = 0; i < rows; i++)
 {
-    Console.Write(message[i]);
-    Thread.Sleep(200);
+    for (int j = 0; j < columns; j++)
+    {
+        Console.Write(symbol);
+    }
+    Console.WriteLine();
 }
-
-Console.WriteLine();
-
-for (int i = 10; i > 0; i--)
-{
-    Console.WriteLine(i);
-    Thread.Sleep(1000);
-}
-
-Console.WriteLine("HAPPY NEW YEAR!");
-
-Console.ReadKey();
