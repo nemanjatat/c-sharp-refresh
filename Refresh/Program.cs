@@ -1,32 +1,68 @@
-﻿PlayGame();
+﻿String playerchoice, opponentChoice;
+Random random = new Random();
+playerchoice = "";
+opponentChoice = "";
+bool playAgain = true;
 
-Console.ReadKey();
-
-static bool PlayGame()
+while (playAgain)
 {
-    bool startPlaying = true;
-    Random random = new Random();
-    int numberToGuess = random.Next(1, 101);
+    Console.Write("Enter ROCK, PAPER or SCISSORS: ");
+    playerchoice = Console.ReadLine().ToUpper();
 
-    while (startPlaying)
+    opponentChoice = random.Next(1, 4).ToString();
+
+    switch (opponentChoice)
     {
-        Console.Write("Enter a number between 1 - 100: ");
-        int userGuess = Convert.ToInt32(Console.ReadLine());
-
-        if (userGuess > numberToGuess)
-        {
-            Console.WriteLine("Too high!");
-        }
-        else if (userGuess < numberToGuess)
-        {
-            Console.WriteLine("Too low!");
-        }
-        else
-        {
-            Console.WriteLine($"Correct! The number is {numberToGuess}");
-            return false;
-        }
+        case "1":
+            opponentChoice = "ROCK";
+            break;
+        case "2":
+            opponentChoice = "PAPER";
+            break;
+        case "3":
+            opponentChoice = "SCISSORS";
+            break;
+        default:
+            Console.WriteLine("Unknown error");
+            break;
     }
 
-    return false;
+    Console.WriteLine($"Player chose: {playerchoice}\nOpponent chose: {opponentChoice}");
+
+    if (playerchoice == opponentChoice)
+    {
+        Console.WriteLine("It's a tie!");
+    }
+    else if (playerchoice == "ROCK" && opponentChoice == "SCISSORS")
+    {
+        Console.WriteLine("Player wins!");
+    }
+    else if (playerchoice == "ROCK" && opponentChoice == "PAPER")
+    {
+        Console.WriteLine("Player losses!");
+    }
+    else if (playerchoice == "PAPER" && opponentChoice == "ROCK")
+    {
+        Console.WriteLine("Player wins!");
+    }
+    else if (playerchoice == "PAPER" && opponentChoice == "SCISSORS")
+    {
+        Console.WriteLine("Player losses!");
+    }
+    else if (playerchoice == "SCISSORS" && opponentChoice == "PAPER")
+    {
+        Console.WriteLine("Player wins!");
+    }
+    else if (playerchoice == "SCISSORS" && opponentChoice == "ROCK")
+    {
+        Console.WriteLine("Player losses!");
+    }
+    else
+    {
+        Console.WriteLine("Error encountered!");
+    }
+
+    Console.WriteLine("Play Again? (Y/N)");
+    if (Console.ReadLine().ToUpper() == "N")
+        playAgain = false;
 }
