@@ -1,23 +1,32 @@
-﻿// nested loops = loops inside of other loops 
-//                uses vary - used a lot in sorting algorithms
+﻿PlayGame();
 
-int rows, columns;
-String symbol;
+Console.ReadKey();
 
-Console.Write("How many rows: ");
-rows = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("How many columns: ");
-columns = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("What symbol: ");
-symbol = Console.ReadLine();
-
-for (int i = 0; i < rows; i++)
+static bool PlayGame()
 {
-    for (int j = 0; j < columns; j++)
+    bool startPlaying = true;
+    Random random = new Random();
+    int numberToGuess = random.Next(1, 101);
+
+    while (startPlaying)
     {
-        Console.Write(symbol);
+        Console.Write("Enter a number between 1 - 100: ");
+        int userGuess = Convert.ToInt32(Console.ReadLine());
+
+        if (userGuess > numberToGuess)
+        {
+            Console.WriteLine("Too high!");
+        }
+        else if (userGuess < numberToGuess)
+        {
+            Console.WriteLine("Too low!");
+        }
+        else
+        {
+            Console.WriteLine($"Correct! The number is {numberToGuess}");
+            return false;
+        }
     }
-    Console.WriteLine();
+
+    return false;
 }
