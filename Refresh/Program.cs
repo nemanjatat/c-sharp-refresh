@@ -1,84 +1,58 @@
-﻿String playerchoice, opponentChoice;
-Random random = new Random();
-playerchoice = "";
-opponentChoice = "";
-bool playAgain = true;
+﻿Console.WriteLine("------------------");
+Console.WriteLine("Calculator Program");
+Console.WriteLine("------------------");
 
-while (playAgain)
+do
 {
-    Console.Write("Enter ROCK, PAPER or SCISSORS: ");
-    playerchoice = Console.ReadLine().ToUpper();
+    double num1 = 0;
+    double num2 = 0;
+    double result = 0;
 
-    opponentChoice = random.Next(1, 4).ToString();
+    Console.Write("Enter number 1: ");
+    num1 = Convert.ToDouble(Console.ReadLine());
 
-    switch (opponentChoice)
+    Console.Write("Enter number 2: ");
+    num2 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("--- What would you like to do? ---");
+    Console.WriteLine("+\taddition");
+    Console.WriteLine("-\tsubtraction");
+    Console.WriteLine("*\tmultiplication");
+    Console.WriteLine("/\tdivision");
+    Console.WriteLine("^\tpow");
+
+    Console.Write("Enter an option: ");
+
+    switch (Console.ReadLine())
     {
-        case "1":
-            opponentChoice = "ROCK";
+        case "+":
+            result = num1 + num2;
+            Console.WriteLine($"{num1} + {num2} = {result}");
             break;
-        case "2":
-            opponentChoice = "PAPER";
+        case "-":
+            result = num1 - num2;
+            Console.WriteLine($"{num1} - {num2} = {result}");
             break;
-        case "3":
-            opponentChoice = "SCISSORS";
+        case "*":
+            result = num1 * num2;
+            Console.WriteLine($"{num1} * {num2} = {result}");
+            break;
+        case "/":
+            result = num1 / num2;
+            Console.WriteLine($"{num1} / {num2} = {result}");
+            break;
+        case "^":
+            result = Math.Pow(num1, num2);
+            Console.WriteLine($"{num1} ^ {num2} = {result}");
             break;
         default:
-            Console.WriteLine("Unknown error");
+            Console.WriteLine("That feature is unavailable");
             break;
     }
 
-    Console.WriteLine($"Player chose: {playerchoice}\nOpponent chose: {opponentChoice}");
+    Console.WriteLine("Would you like to continue? (Y = yes, N = no)");
+} while (Console.ReadLine().ToUpper() == "Y");
 
-    switch (playerchoice)
-    {
-        case "ROCK":
-            if (opponentChoice == "ROCK")
-            {
-                Console.WriteLine("It's a tie!");
-            }
-            else if (opponentChoice == "PAPER")
-            {
-                Console.WriteLine("Computer wins!");
-            }
-            else
-            {
-                Console.WriteLine("Player wins!");
-            }
-            break;
-        case "PAPER":
-            if (opponentChoice == "ROCK")
-            {
-                Console.WriteLine("Player wins!");
-            }
-            else if (opponentChoice == "PAPER")
-            {
-                Console.WriteLine("It's a tie");
-            }
-            else
-            {
-                Console.WriteLine("Computer wins!");
-            }
-            break;
-        case "SCISSORS":
-            if (opponentChoice == "ROCK")
-            {
-                Console.WriteLine("Computer wins!");
-            }
-            else if (opponentChoice == "PAPER")
-            {
-                Console.WriteLine("Player wins!");
-            }
-            else
-            {
-                Console.WriteLine("It's a tie!");
-            }
-            break;
-        default:
-            Console.WriteLine("Error encountered");
-            break;
-    }
+Console.WriteLine("Thank you for using the Calculator App!");
 
-    Console.WriteLine("Play Again? (Y/N)");
-    if (Console.ReadLine().ToUpper() == "N")
-        playAgain = false;
-}
+Console.ReadKey();
