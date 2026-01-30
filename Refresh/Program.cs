@@ -1,11 +1,21 @@
-﻿// while loops = repeats some code while some condition remains true
+﻿// for loop = repeats some code a FINITE amount of times
 
-String name = "";
+String message = "Countdown to new year...";
 
-while (name == "")
+for (int i = 0; i < message.Length; i++)
 {
-    Console.Write("Enter your name: ");
-    name = Console.ReadLine()!;
+    Console.Write(message[i]);
+    Thread.Sleep(200);
 }
 
-Console.WriteLine($"Hello {name}!");
+Console.WriteLine();
+
+for (int i = 10; i > 0; i--)
+{
+    Console.WriteLine(i);
+    Thread.Sleep(1000);
+}
+
+Console.WriteLine("HAPPY NEW YEAR!");
+
+Console.ReadKey();
