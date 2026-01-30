@@ -29,37 +29,53 @@ while (playAgain)
 
     Console.WriteLine($"Player chose: {playerchoice}\nOpponent chose: {opponentChoice}");
 
-    if (playerchoice == opponentChoice)
+    switch (playerchoice)
     {
-        Console.WriteLine("It's a tie!");
-    }
-    else if (playerchoice == "ROCK" && opponentChoice == "SCISSORS")
-    {
-        Console.WriteLine("Player wins!");
-    }
-    else if (playerchoice == "ROCK" && opponentChoice == "PAPER")
-    {
-        Console.WriteLine("Player losses!");
-    }
-    else if (playerchoice == "PAPER" && opponentChoice == "ROCK")
-    {
-        Console.WriteLine("Player wins!");
-    }
-    else if (playerchoice == "PAPER" && opponentChoice == "SCISSORS")
-    {
-        Console.WriteLine("Player losses!");
-    }
-    else if (playerchoice == "SCISSORS" && opponentChoice == "PAPER")
-    {
-        Console.WriteLine("Player wins!");
-    }
-    else if (playerchoice == "SCISSORS" && opponentChoice == "ROCK")
-    {
-        Console.WriteLine("Player losses!");
-    }
-    else
-    {
-        Console.WriteLine("Error encountered!");
+        case "ROCK":
+            if (opponentChoice == "ROCK")
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            else if (opponentChoice == "PAPER")
+            {
+                Console.WriteLine("Computer wins!");
+            }
+            else
+            {
+                Console.WriteLine("Player wins!");
+            }
+            break;
+        case "PAPER":
+            if (opponentChoice == "ROCK")
+            {
+                Console.WriteLine("Player wins!");
+            }
+            else if (opponentChoice == "PAPER")
+            {
+                Console.WriteLine("It's a tie");
+            }
+            else
+            {
+                Console.WriteLine("Computer wins!");
+            }
+            break;
+        case "SCISSORS":
+            if (opponentChoice == "ROCK")
+            {
+                Console.WriteLine("Computer wins!");
+            }
+            else if (opponentChoice == "PAPER")
+            {
+                Console.WriteLine("Player wins!");
+            }
+            else
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            break;
+        default:
+            Console.WriteLine("Error encountered");
+            break;
     }
 
     Console.WriteLine("Play Again? (Y/N)");
