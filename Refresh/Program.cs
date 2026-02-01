@@ -1,39 +1,21 @@
-﻿// arrays = a variable that can store multiple values.
-//          fixed size possible
+﻿// foreach loop = a simpler way to iterate over an array, but it's less flexible
 
-String[] movies = { "The Last Samurai", "The King (2019)", "Good Will Hunting (1997)" };
+String[] trains = { "Orient Express", "Flying Scotsman", "Golden Arrow" };
+String message = "Available Trains";
 
-for (int i = 0; i < movies.Length; i++)
+for (int i = 0; i < message.Length; i++)
 {
-    Console.WriteLine(movies[i]);
+    Console.Write(message[i]);
+    Thread.Sleep(200);
+
+    if (i == message.Length - 1)
+        Console.WriteLine();
 }
 
-Console.WriteLine("----------------------");
-Console.WriteLine("----------------------");
-Console.WriteLine("----------------------");
-
-movies[1] = "Gladiator";
-
-foreach (String movie in movies)
+foreach (String train in trains)
 {
-    Console.WriteLine(movie);
-}
-
-// fixed size
-String[] destinations = new string[3];
-
-Console.WriteLine("Write 3 places where you'd like to go:");
-for (int i = 0; i < destinations.Length; i++)
-{
-    destinations[i] = Console.ReadLine();
-}
-
-Console.WriteLine("Places you'd like to go to are:");
-
-foreach (String destination in destinations)
-{
-    Thread.Sleep(1000);
-    Console.WriteLine(destination);
+    Thread.Sleep(500);
+    Console.WriteLine(train);
 }
 
 Console.ReadKey();
