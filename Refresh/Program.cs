@@ -14,6 +14,5 @@ Console.ReadKey();
 
 static double Multiply(double x, double y)
 {
-    double result = x * y;
-    return result;
+    return x * y;
 }
