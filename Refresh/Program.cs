@@ -1,21 +1,24 @@
-﻿// foreach loop = a simpler way to iterate over an array, but it's less flexible
+﻿// method = performs a section of code, whenever it's called (invoked)
+//          benefit = let's us reuse code without writing it multiple times
 
-String[] trains = { "Orient Express", "Flying Scotsman", "Golden Arrow" };
-String message = "Available Trains";
+Console.Write("Enter your name: ");
+String name = Console.ReadLine();
 
-for (int i = 0; i < message.Length; i++)
-{
-    Console.Write(message[i]);
-    Thread.Sleep(200);
+Console.Write("Enter your age: ");
+int age = Convert.ToInt32(Console.ReadLine());
 
-    if (i == message.Length - 1)
-        Console.WriteLine();
-}
-
-foreach (String train in trains)
-{
-    Thread.Sleep(500);
-    Console.WriteLine(train);
-}
+singHappyBday(name, age);
+singHappyBday(name, age);
+singHappyBday(name, age);
 
 Console.ReadKey();
+
+static void singHappyBday(String birthdayBoy, int yearsOld)
+{
+    Console.WriteLine("Happy birthday to you!");
+    Console.WriteLine("Happy birthday to you!");
+    Console.WriteLine($"Happy birthday dear {birthdayBoy}!");
+    Console.WriteLine($"You are {yearsOld} years old!");
+    Console.WriteLine("Happy birthday to you!");
+    Console.WriteLine();
+}
