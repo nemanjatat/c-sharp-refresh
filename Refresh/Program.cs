@@ -1,19 +1,44 @@
-﻿// params keyword = a method parameter that takes a variable number of arguments.
-//                  the parameter type must be a single - dimensional array
+﻿// exception = errors that occur during execution
 
-double total = CheckOut(2.99, 3.14, 4.85);
+//      try     = try some code that is considered "dangerous"
+//      catch   = catches and handles exceptions when they occur
+//      finally = always executes regardless if exception is caught or not
 
-Console.WriteLine(total);
-Console.ReadLine();
+double x, y, result;
 
-static double CheckOut(params double[] prices)
+try
 {
-    double total = 0;
+    Console.Write("Enter number 1: ");
+    x = Convert.ToDouble(Console.ReadLine());
 
-    foreach (double price in prices)
+    Console.Write("Enter number 2: ");
+    y = Convert.ToDouble(Console.ReadLine());
+
+    if (y == 0)
     {
-        total += price;
+        Console.WriteLine("You cannot divide by 0!");
     }
-
-    return total;
+    else
+    {
+        result = x / y;
+        Console.WriteLine($"{x} / {y} = {result}");
+    }
 }
+catch (FormatException e)
+{
+    Console.WriteLine("Type ONLY NUMBERS!");
+}
+catch (DivideByZeroException)
+{
+    Console.WriteLine("You cannot divide by 0!");
+}
+catch (Exception e)
+{
+    Console.WriteLine("Something went wrong!");
+}
+finally
+{
+    Console.WriteLine("Thanks for stopping by!");
+}
+
+Console.ReadKey();
