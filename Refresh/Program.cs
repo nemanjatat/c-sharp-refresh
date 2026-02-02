@@ -1,39 +1,19 @@
-﻿// method overloading = methods share same name, but different parameters
-//                      name + parameters = signature
-//                      methods must have a unique signature
+﻿// params keyword = a method parameter that takes a variable number of arguments.
+//                  the parameter type must be a single - dimensional array
 
-class Program
+double total = CheckOut(2.99, 3.14, 4.85);
+
+Console.WriteLine(total);
+Console.ReadLine();
+
+static double CheckOut(params double[] prices)
 {
-    static void Main()
+    double total = 0;
+
+    foreach (double price in prices)
     {
-        Console.Write("Enter number 1: ");
-        double x = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Enter number 2: ");
-        double y = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Enter number 3: ");
-        double z = Convert.ToDouble(Console.ReadLine());
-
-        double result = Multiply(x, y);
-        Console.WriteLine($"{x} * {y} = {result}");
-
-        result = Multiply(x, y, z);
-        Console.WriteLine($"{x} * {y} * {z} = {result}");
-
-        Console.ReadKey();
+        total += price;
     }
 
-    static double Multiply(double x, double y)
-    {
-        return x * y;
-    }
-
-    static double Multiply(double x, double y, double z)
-    {
-        return x * y * z;
-    }
+    return total;
 }
-
-
-
