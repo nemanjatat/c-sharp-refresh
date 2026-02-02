@@ -1,44 +1,19 @@
-﻿// exception = errors that occur during execution
+﻿// conditional operator = used in conditional assignment if a condition is true/false
 
-//      try     = try some code that is considered "dangerous"
-//      catch   = catches and handles exceptions when they occur
-//      finally = always executes regardless if exception is caught or not
+// (condition) ? x : y
 
-double x, y, result;
+var availableMovies = new List<String>
+{
+    "THE LAST SAMURAI",
+    "GOOD WILL HUNTING",
+    "STAR WARS"
+};
 
-try
-{
-    Console.Write("Enter number 1: ");
-    x = Convert.ToDouble(Console.ReadLine());
+Console.Write("Which movie are you looking for: ");
+String movieSelect = Console.ReadLine().ToUpper();
 
-    Console.Write("Enter number 2: ");
-    y = Convert.ToDouble(Console.ReadLine());
+var message = (availableMovies.Exists(movie => movie == movieSelect)) ? "That movie is available" : "That movie is NOT available!";
 
-    if (y == 0)
-    {
-        Console.WriteLine("You cannot divide by 0!");
-    }
-    else
-    {
-        result = x / y;
-        Console.WriteLine($"{x} / {y} = {result}");
-    }
-}
-catch (FormatException e)
-{
-    Console.WriteLine("Type ONLY NUMBERS!");
-}
-catch (DivideByZeroException)
-{
-    Console.WriteLine("You cannot divide by 0!");
-}
-catch (Exception e)
-{
-    Console.WriteLine("Something went wrong!");
-}
-finally
-{
-    Console.WriteLine("Thanks for stopping by!");
-}
+Console.WriteLine(message);
 
 Console.ReadKey();
