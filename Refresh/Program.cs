@@ -1,22 +1,15 @@
-﻿// string interpolation = allows us to insert variables into a string literal
-//                        precede a string literal with $
-//                        {} are placeholders
+﻿/*
+String[] ford = { "Focus", "EcoSport", "Kuga" };
+String[] honda = { "Jazz", "Accord", "Civic" };
+String[] opel = { "Astra", "Insignia", "Corsa" };
+*/
 
-String name, destination;
+String[,] parkingLot = { { "Focus", "EcoSport", "Kuga" },
+                         { "Jazz", "Accord", "Civic"},
+                         { "Astra", "Insignia", "Corsa" }
+                       };
 
-Console.Write("What's your name: ");
-name = Console.ReadLine();
-
-Console.Write($"It's nice to meet you {name}. Where would you like to go: ");
-destination = Console.ReadLine();
-
-Console.Write($"Good news {name}");
-for(int i = 0; i < 3; i++)
-{
-    Console.Write(".");
-    Thread.Sleep(1000);
-}
-Console.WriteLine();
-Console.WriteLine($"You are heading to {destination}!");
+foreach (String car in parkingLot)
+    Console.WriteLine(car);
 
 Console.ReadKey();
