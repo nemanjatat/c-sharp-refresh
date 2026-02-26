@@ -1,26 +1,16 @@
-﻿/*
-String[] ford = { "Focus", "EcoSport", "Kuga" };
-String[] honda = { "Jazz", "Accord", "Civic" };
-String[] opel = { "Astra", "Insignia", "Corsa" };
-*/
+﻿using Refresh;
 
-String[,] parkingLot = { { "Focus", "EcoSport", "Kuga" },
-                         { "Jazz", "Accord", "Civic"},
-                         { "Astra", "Insignia", "Corsa" }
-                       };
-
-/*
-foreach (String car in parkingLot)
-    Console.WriteLine(car);
-*/
-
-for (int i = 0; i < parkingLot.GetLength(0); i++)
+class Program
 {
-    for (int j = 0; j < parkingLot.GetLength(1); j++)
+    static void Main(string[] args)
     {
-        Console.Write(parkingLot[i, j] + " ");
-    }
-    Console.WriteLine();
-}
+        // class = A bundle of related code.
+        //         Can be used as a blueprint to create objects (OOP)
 
-Console.ReadKey();
+        Messages.Hello();
+        Messages.Waiting();
+        Messages.Bye();
+
+        Console.ReadKey();
+    }
+}
