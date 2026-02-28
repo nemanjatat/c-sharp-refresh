@@ -4,24 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        // object = An instance of a class
-        //          A class can be used as a blueprint to create objects (OOP)
-        //          Objects can have fields & methods (characteristics & actions)
+        // constructor = A special method in a class
+        //               Same name as the class name
+        //               Can be used to assign arguments to fields when creating an object
 
-        Human human1 = new Human();
-        Human human2 = new Human();
+        Restaurant restaurant1 = new Restaurant("Boss", "Matije Korvina 7", 4.5, "+381 24 551111", "www.bosscaffe.com");
+        Restaurant restaurant2 = new Restaurant("DENIS Gastro Temple", "Brace Radic 24", 3.8, "+381 24 551155", "denisgastrotemple.rs");
 
-        human1.name = "Rick";
-        human1.age = 65;
-
-        human2.name = "Morty";
-        human2.age = 16;
-
-        human1.Eat();
-        human1.Sleep();
-        
-        human2.Eat();
-        human2.Sleep();
+        restaurant1.Info();
+        Console.WriteLine();
+        restaurant2.Info();
 
         Console.ReadKey();
     }
