@@ -4,16 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        // constructor = A special method in a class
-        //               Same name as the class name
-        //               Can be used to assign arguments to fields when creating an object
+        // static = modifier to declare a static member, which belongs to the class itself
+        //          rather than to any specific object
 
-        Restaurant restaurant1 = new Restaurant("Boss", "Matije Korvina 7", 4.5, "+381 24 551111", "www.bosscaffe.com");
-        Restaurant restaurant2 = new Restaurant("DENIS Gastro Temple", "Brace Radic 24", 3.8, "+381 24 551155", "denisgastrotemple.rs");
+        Car car1 = new Car("Mustang");
+        Car car2 = new Car("Corvette");
+        Car car3 = new Car("Lambo");
 
-        restaurant1.Info();
-        Console.WriteLine();
-        restaurant2.Info();
+        Console.WriteLine(Car.numberOfCars);
+
+        Car.StartRace();
 
         Console.ReadKey();
     }
