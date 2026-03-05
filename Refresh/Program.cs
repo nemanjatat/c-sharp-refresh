@@ -4,16 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        // static = modifier to declare a static member, which belongs to the class itself
-        //          rather than to any specific object
+        // overloaded constructors = technique to create multiple constructors
+        //                           with a different set of parameters
+        //                           name + parameters = signature
 
-        Car car1 = new Car("Mustang");
-        Car car2 = new Car("Corvette");
-        Car car3 = new Car("Lambo");
+        Pizza pizza1 = new Pizza("thin crust", "tomato basil", "mozzarella", "pepperoni");
+        Pizza pizza2 = new Pizza("stuffed crust", "garlic white", "cheddar");
+        Pizza pizza3 = new Pizza("whole weat", "classic tomato");
+        Pizza pizza4 = new Pizza("regular crust");
 
-        Console.WriteLine(Car.numberOfCars);
-
-        Car.StartRace();
+        pizza1.CustomerOrderInfo();
+        pizza2.CustomerOrderInfo();
+        pizza3.CustomerOrderInfo();
+        pizza4.CustomerOrderInfo();
 
         Console.ReadKey();
     }
