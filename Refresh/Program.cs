@@ -4,19 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        // overloaded constructors = technique to create multiple constructors
-        //                           with a different set of parameters
-        //                           name + parameters = signature
+        // inheritance = 1 or more child classes receiving fields, methods, etc. from a common parent
 
-        Pizza pizza1 = new Pizza("thin crust", "tomato basil", "mozzarella", "pepperoni");
-        Pizza pizza2 = new Pizza("stuffed crust", "garlic white", "cheddar");
-        Pizza pizza3 = new Pizza("whole weat", "classic tomato");
-        Pizza pizza4 = new Pizza("regular crust");
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+        Boat boat = new Boat();
 
-        pizza1.CustomerOrderInfo();
-        pizza2.CustomerOrderInfo();
-        pizza3.CustomerOrderInfo();
-        pizza4.CustomerOrderInfo();
+        Console.WriteLine(car.speed);
+        Console.WriteLine(car.wheels);
+        car.Go();
+
+        Console.WriteLine(bicycle.speed);
+        Console.WriteLine(bicycle.wheels);
+        bicycle.Go();
+
+        Console.WriteLine(boat.speed);
+        Console.WriteLine(boat.wheels);
+        boat.Go();
 
         Console.ReadKey();
     }

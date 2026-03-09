@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Refresh
 {
-    internal class Car : Vehicle
+    internal class Boat : Vehicle
     {
-        public int wheels = 4;
+        public int wheels = 0;
     }
 }
