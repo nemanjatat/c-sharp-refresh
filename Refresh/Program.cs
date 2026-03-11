@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        // inheritance = 1 or more child classes receiving fields, methods, etc. from a common parent
-
+        // abstract classes = modifier that indicates missing components or incomplete implementation
+        
         Car car = new Car();
         Bicycle bicycle = new Bicycle();
         Boat boat = new Boat();
