@@ -4,23 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        // abstract classes = modifier that indicates missing components or incomplete implementation
-        
-        Car car = new Car();
-        Bicycle bicycle = new Bicycle();
-        Boat boat = new Boat();
+        Car[] garage = new Car[3];
 
-        Console.WriteLine(car.speed);
-        Console.WriteLine(car.wheels);
-        car.Go();
+        Car car1 = new Car("Mustang");
+        Car car2 = new Car("Corvette");
+        Car car3 = new Car("Lambo");
 
-        Console.WriteLine(bicycle.speed);
-        Console.WriteLine(bicycle.wheels);
-        bicycle.Go();
+        garage[0] = car1;
+        garage[1] = car2;
+        garage[2] = car3;
 
-        Console.WriteLine(boat.speed);
-        Console.WriteLine(boat.wheels);
-        boat.Go();
+        Console.WriteLine(garage[0].model);
+        Console.WriteLine(garage[1].model);
+        Console.WriteLine(garage[2].model);
 
         Console.ReadKey();
     }

@@ -9,6 +9,11 @@ namespace Refresh
 {
     internal class Car : Vehicle
     {
-        public int wheels = 4;
+        public String model;
+
+        public Car(String model)
+        {
+            this.model = model;
+        }
     }
 }
