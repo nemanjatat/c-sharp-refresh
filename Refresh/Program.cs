@@ -4,18 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Car[] garage =
-        {
-            new Car("Mustang"),
-            new Car("Corvette"),
-            new Car("Lambo")
-        };
+        Flower flower = new Flower("Lilacs", "white");
 
-        foreach(Car car in garage)
-        {
-            Console.WriteLine(car.model);
-        }
+        ChangeColor(flower, "purple");
+
+        Console.WriteLine($"Flower name: {flower.name}\nFlower color: {flower.color}");
 
         Console.ReadKey();
+    }
+
+    public static void ChangeColor(Flower flower, String color)
+    {
+        flower.color = color;
     }
 }
