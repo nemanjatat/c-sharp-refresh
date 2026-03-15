@@ -5,16 +5,15 @@ class Program
     static void Main(string[] args)
     {
         Flower flower = new Flower("Lilacs", "white");
+        Flower flower_copy = Copy(flower);
 
-        ChangeColor(flower, "purple");
-
-        Console.WriteLine($"Flower name: {flower.name}\nFlower color: {flower.color}");
+        Console.WriteLine($"Flower name: {flower_copy.name}\nFlower color: {flower_copy.color}");
 
         Console.ReadKey();
     }
 
-    public static void ChangeColor(Flower flower, String color)
+    public static Flower Copy(Flower flower)
     {
-        flower.color = color;
+        return new Flower(flower.name, flower.color);
     }
 }
