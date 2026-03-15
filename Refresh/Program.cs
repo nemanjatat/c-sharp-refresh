@@ -4,16 +4,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        Flower flower = new Flower("Lilacs", "white");
-        Flower flower_copy = Copy(flower);
+        // method overriding = provides a new version of a method inherited from a parent class
+        //                     inherited method must be: abstract, virtual, or already overriden
+        //                     Used with ToString(), polymorphism
 
-        Console.WriteLine($"Flower name: {flower_copy.name}\nFlower color: {flower_copy.color}");
+        Animal fox = new Animal();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
 
-        Console.ReadKey();
-    }
+        fox.Speak();
+        dog.Speak();
+        cat.Speak();
 
-    public static Flower Copy(Flower flower)
-    {
-        return new Flower(flower.name, flower.color);
+        Console.ReadLine();
     }
 }
