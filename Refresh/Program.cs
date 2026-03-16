@@ -4,17 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        // method overriding = provides a new version of a method inherited from a parent class
-        //                     inherited method must be: abstract, virtual, or already overriden
-        //                     Used with ToString(), polymorphism
+        // ToString() = converts an object to its string representation so that it is suitable for display
 
-        Animal fox = new Animal();
-        Dog dog = new Dog();
-        Cat cat = new Cat();
+        River river = new River("Sava", "Slovenia", 990, ["Slovenia", "Croatia", "Bosnia & Herzegovina", "Serbia"]);
 
-        fox.Speak();
-        dog.Speak();
-        cat.Speak();
+        Console.WriteLine(river); // river.ToString()
 
         Console.ReadLine();
     }
