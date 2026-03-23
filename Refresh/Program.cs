@@ -7,17 +7,14 @@ class Program
     {
         List<Movie> movies = new List<Movie>();
 
-        Movie movie1 = new Movie("Project Hail Mary".ToLower());
-        Movie movie2 = new Movie("Knowing".ToLower());
-        Movie movie3 = new Movie("The Grand Budapest Hotel".ToLower());
-
-        movies.Add(movie1);
-        movies.Add(movie2);
-        movies.Add(movie3);
+        // anonymous objects version
+        movies.Add(new Movie("Project Hail Mary".ToLower()));
+        movies.Add(new Movie("Knowing".ToLower()));
+        movies.Add(new Movie("The Grand Budapest Hotel".ToLower()));
 
         foreach (Movie movie in movies)
         {
-            Console.WriteLine(movie.name);
+            Console.WriteLine(movie);
         }
 
         Console.ReadLine();

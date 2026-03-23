@@ -8,11 +8,16 @@ namespace Refresh
 {
     internal class Movie
     {
-        public String name;
+        String name;
 
         public Movie(String name)
         {
             this.name = name;
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }
