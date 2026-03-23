@@ -8,6 +8,9 @@ namespace Refresh
 {
     internal class Boat : Vehicle
     {
-        public int wheels = 0;
+        public override void Go()
+        {
+            Console.WriteLine("The boat is moving!");
+        }
     }
 }

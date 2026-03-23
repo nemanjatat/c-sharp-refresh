@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Refresh
 {
-    internal class Vehicle
+    internal interface IPrey
     {
-        public virtual void Go()
-        {
-            Console.WriteLine("This vehicle is moving!");
-        }
+        void Flee();
     }
 }

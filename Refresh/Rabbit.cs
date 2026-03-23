@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Refresh
 {
-    internal class Vehicle
+    internal class Rabbit : IPrey
     {
-        public virtual void Go()
+        public void Flee()
         {
-            Console.WriteLine("This vehicle is moving!");
+            Console.WriteLine("The rabbit is running away!");
         }
     }
 }

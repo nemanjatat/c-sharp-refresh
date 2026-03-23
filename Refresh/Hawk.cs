@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Refresh
 {
-    internal class Vehicle
+    internal class Hawk : IPredator
     {
-        public virtual void Go()
+        public void Hunt()
         {
-            Console.WriteLine("This vehicle is moving!");
+            Console.WriteLine("The hawk is searching for food!");
         }
     }
 }

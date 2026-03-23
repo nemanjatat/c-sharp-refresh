@@ -4,11 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        // ToString() = converts an object to its string representation so that it is suitable for display
+        // interface = defines a "contract" that all the class inheriting from should follow
 
-        River river = new River("Sava", "Slovenia", 990, ["Slovenia", "Croatia", "Bosnia & Herzegovina", "Serbia"]);
+        //             An interface declares "what a class should have"
+        //             An inheriting class defines "how it should do it"
 
-        Console.WriteLine(river); // river.ToString()
+        //             Benefit = security + multiple inheritence + "plug-and-play"
+
+        Rabbit rabbit = new Rabbit();
+        Hawk hawk = new Hawk();
+        Fish fish = new Fish();
+
+        rabbit.Flee();
+        hawk.Hunt();
+        fish.Flee();
+        fish.Hunt();
 
         Console.ReadLine();
     }

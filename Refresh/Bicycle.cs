@@ -8,6 +8,9 @@ namespace Refresh
 {
     internal class Bicycle : Vehicle
     {
-        public int wheels = 2;
+        public override void Go()
+        {
+            Console.WriteLine("The bicycle is moving!");
+        }
     }
 }

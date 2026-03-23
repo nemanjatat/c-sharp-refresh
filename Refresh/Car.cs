@@ -9,11 +9,9 @@ namespace Refresh
 {
     internal class Car : Vehicle
     {
-        public String model;
-
-        public Car(String model)
+        public override void Go()
         {
-            this.model = model;
+            Console.WriteLine("The car is moving!");
         }
     }
 }
