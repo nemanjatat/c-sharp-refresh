@@ -5,15 +5,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Auto-Implemented properties = shortcut when no additional logic is required in the property
-        //                               you do not have to define a field for a property
-        //                               you only have to write get; and/or set; inside a property
+        // enums = special "class" that contains a set of named integer constants.
+        //         Use enums when you have values that you know will not change,
+        //         To get the integer value from an item, you must explicitly convert to an int
 
-        Location location = new Location("Gostilnica Štrudl", 
-            "46.272743900741176, 13.952891840480277");
+        //         name = integer
 
-        Console.WriteLine(location);
+        Console.WriteLine($"{Planets.Pluto} is a planet.");
 
         Console.ReadLine();
+    }
+
+    enum Planets
+    {
+        Mercury,
+        Venus,
+        Earth,
+        Mars,
+        Jupiter,
+        Saturn,
+        Uranus,
+        Neptune,
+        Pluto
     }
 }
