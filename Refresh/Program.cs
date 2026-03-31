@@ -5,21 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        // getters & setters = add security to fields by encapsulation
-        //                     They're accessors found within properties
+        // Auto-Implemented properties = shortcut when no additional logic is required in the property
+        //                               you do not have to define a field for a property
+        //                               you only have to write get; and/or set; inside a property
 
-        // properties = combine aspects of both fields and methods (share name with a field)
-        // get accessor = used to return the property value
-        // set accessor = used to assign a new value
-        // value keyword = defines the value being assigned by the set (parameter)
+        Location location = new Location("Gostilnica Štrudl", 
+            "46.272743900741176, 13.952891840480277");
 
-        DollarStore ds = new DollarStore("pizza cutter", 25);
-
-        Console.WriteLine(ds);
-
-        ds.Price = 100;
-
-        Console.WriteLine(ds);
+        Console.WriteLine(location);
 
         Console.ReadLine();
     }
